@@ -8,5 +8,8 @@
       "scripts": ["background.js"]
     }
   },
-  "icons": { "16": "image/main-icon.png" , "128": "image/main-icon.png", "256": "image/main-icon.png"}
+  "icons": { "16": "image/main-icon.png" , "128": "image/main-icon.png", "256": "image/main-icon.png"},
+  "permissions": [
+    "http://www.rususa.com/dictionary/*"
+  ]
 }
