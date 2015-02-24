@@ -10,6 +10,8 @@
   },
   "icons": { "16": "image/main-icon.png" , "128": "image/main-icon.png", "256": "image/main-icon.png"},
   "permissions": [
-    "http://www.rususa.com/dictionary/*"
+    "http://www.rususa.com/dictionary/*",
+    "http://o53xo.oj2xg5ltmexgg33n.cmle.ru/dictionary/random.asp",
+    "http://www.rususa.com.ext.zawq.ru/dictionary/random.asp-lang-rus?"
   ]
 }

@@ -7,11 +7,11 @@ function init() {
 	originalWord = document.getElementById("original_word");
 	translateWord = document.getElementById("translate_word");
 	body = document.getElementById("body");
-	setInterval(getWord, 5000);
+	setInterval(getWord, 10000);
 }
 
 function getWord() {
-	loadPage("http://www.rususa.com/dictionary/random.asp-lang-rus", actionAfterAjax);
+	loadPage("http://www.rususa.com.ext.zawq.ru/dictionary/random.asp-lang-rus?", actionAfterAjax);
 }
 
 function actionAfterAjax(ajaxResponse) {

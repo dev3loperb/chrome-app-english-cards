@@ -1,5 +1,6 @@
 #body {
 	background-color: #CCCF88;
+	margin-top: auto;
 }
 
 .center {
@@ -12,5 +13,5 @@
 }
 
 .big_text {
-	font-size: 40px;
+	font-size: 30px;
 }
