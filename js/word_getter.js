@@ -11,18 +11,25 @@ function init() {
 }
 
 function getWord() {
+<<<<<<< HEAD
 	loadPage("http://www.rususa.com.ext.zawq.ru/dictionary/random.asp-lang-rus?", actionAfterAjax);
+=======
+  console.log("load page start")
+  randomWord();
+>>>>>>> 997035c0961b3b3528b0749328eb9b8e5da37083
 }
 
-function actionAfterAjax(ajaxResponse) {
-	var parser = new DOMParser();
-	var doc = parser.parseFromString(ajaxResponse, "text/html");
-	findWords(doc);
+function handlingGetRandomWord(ajaxResponse) {
+  console.log("page loaded. Word = " + ajaxResponse);
+	if (ajaxResponse != null && ajaxResponse != "" && originalWord != null) {
+	  console.log('ajaxResponse = ' + ajaxResponse);
+	  var wordAndTranslate = JSON.parse(ajaxResponse);
+	  originalWord.innerHTML = wordAndTranslate['word'];
+	  translateWord.innerHTML = wordAndTranslate['translate'];
+	}
 }
 
-function findWords(sourceAsDOM) {
-	if (sourceAsDOM.getElementById("divTranslation") == null) return;
-	var translation = sourceAsDOM.getElementById("divTranslation").innerHTML.replace("<br>", "").trim();
-	originalWord.innerHTML = sourceAsDOM.getElementById("divTranslation").parentNode.getElementsByTagName("b")[0].innerHTML;
-	translateWord.innerHTML = translation;
+function randomWord() {
+  var wordServerUrl = "http://ipergenitsa.url.ph/randomWord.php";
+  ajaxGet(wordServerUrl, handlingGetRandomWord);
 }
