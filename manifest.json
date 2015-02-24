@@ -2,8 +2,8 @@
   "name": "English Cards",
 
   "author": "ipergenitsa",
-  "description": "Application shows a random english word and its translation",
-  "version": "0.0.0.1",
+  "description": "Приложение показывает различные слова на английском языке и их перевод на русский язык.",
+  "version": "0.0.0.4",
   "manifest_version": 2,
   "app": {
     "background": {

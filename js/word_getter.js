@@ -1,12 +1,15 @@
 window.onload=init;
+window.addEventListener("resize", onmyPageResize, false);
 var originalWord;
 var translateWord;
 var body;
+var bodyBorder = 2;
 
 function init() {
 	originalWord = document.getElementById("original_word");
 	translateWord = document.getElementById("translate_word");
 	body = document.getElementById("body");
+	setBodyView()
 	setInterval(getWord, 10000);
 }
 
@@ -28,4 +31,13 @@ function handlingGetRandomWord(ajaxResponse) {
 function randomWord() {
   var wordServerUrl = "http://ipergenitsa.url.ph/randomWord.php";
   ajaxGet(wordServerUrl, handlingGetRandomWord);
+}
+
+function onmyPageResize() {
+  setBodyView()
+}
+
+function setBodyView() {
+  body.style.width = window.outerWidth - 2 * bodyBorder + "px"
+  body.style.height = window.outerHeight - 2 * bodyBorder + "px"
 }
