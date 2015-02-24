@@ -1,9 +1,11 @@
 #body {
 	background-color: #CCCF88;
+	margin-top: auto;
 }
 
 .center {
-  margin: auto auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .text_center {
@@ -11,5 +13,5 @@
 }
 
 .big_text {
-	font-size: 40px;
+	font-size: 30px;
 }

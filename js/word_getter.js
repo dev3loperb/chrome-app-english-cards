@@ -14,18 +14,13 @@ function init() {
 }
 
 function getWord() {
-  console.log("load page start")
-  randomWord();
+	loadPage("http://www.rususa.com.ext.zawq.ru/dictionary/random.asp-lang-rus?", actionAfterAjax);
 }
 
-function handlingGetRandomWord(ajaxResponse) {
-  console.log("page loaded. Word = " + ajaxResponse);
-	if (ajaxResponse != null && ajaxResponse != "" && originalWord != null) {
-	  console.log('ajaxResponse = ' + ajaxResponse);
-	  var wordAndTranslate = JSON.parse(ajaxResponse);
-	  originalWord.innerHTML = wordAndTranslate['word'];
-	  translateWord.innerHTML = wordAndTranslate['translate'];
-	}
+function actionAfterAjax(ajaxResponse) {
+	var parser = new DOMParser();
+	var doc = parser.parseFromString(ajaxResponse, "text/html");
+	findWords(doc);
 }
 
 function randomWord() {
